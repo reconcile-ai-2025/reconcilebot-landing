@@ -1,0 +1,7 @@
+# Railway ignore file
+README.md
+DEPLOYMENT.md
+deploy-to-github-pages.sh
+*.md
+.git
+.gitignore

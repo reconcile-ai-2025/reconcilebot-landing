@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>ReconcileBot – AI-Powered Bank & Financial Reconciliation Tool | Save Hours on Matching Transactions</title>
+    <meta name="description" content="Automate messy bank reconciliations with ReconcileBot's AI. Upload statements, match transactions instantly, reduce errors. Free trial for accountants & small businesses.">
+    <meta name="keywords" content="bank reconciliation, financial reconciliation, AI reconciliation tool, automate reconciliations, transaction matching, accounting automation, financial data reconciliation, reconcile transactions, bank statement reconciliation">
+    <meta name="author" content="ReconcileBot">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://reconcilebot.io/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://reconcilebot.io/">
+    <meta property="og:title" content="ReconcileBot – AI-Powered Bank & Financial Reconciliation Tool">
+    <meta property="og:description" content="Automate messy bank reconciliations with ReconcileBot's AI. Upload statements, match transactions instantly, reduce errors.">
+    <meta property="og:image" content="https://reconcilebot.io/og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://reconcilebot.io/">
+    <meta property="twitter:title" content="ReconcileBot – AI-Powered Bank & Financial Reconciliation Tool">
+    <meta property="twitter:description" content="Automate messy bank reconciliations with ReconcileBot's AI. Upload statements, match transactions instantly, reduce errors.">
+    <meta property="twitter:image" content="https://reconcilebot.io/og-image.png">
+
+    <!-- Structured Data for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "ReconcileBot",
+      "applicationCategory": "FinanceApplication",
+      "description": "AI-powered financial reconciliation tool for automating bank statement matching and transaction reconciliation.",
+      "url": "https://reconcilebot.io",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "ReconcileBot"
+      },
+      "featureList": [
+        "Automated transaction matching",
+        "AI-powered reconciliation",
+        "Multi-column key matching",
+        "Anomaly detection",
+        "CSV export of results",
+        "Project management"
+      ]
+    }
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔄</text></svg>">
+
+    <!-- Google Analytics (optional - add your tracking ID) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script> -->
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            padding: 40px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .logo {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .tagline {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 40px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .features {
+            background: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            margin: 40px 0;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 2.2em;
+            margin-bottom: 50px;
+            color: #333;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 30px;
+            border-radius: 15px;
+            background: #f8f9fa;
+            transition: transform 0.3s;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .feature h3 {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            color: #667eea;
+        }
+
+        .feature p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .use-cases {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            margin: 40px 0;
+        }
+
+        .use-cases h2 {
+            text-align: center;
+            font-size: 2.2em;
+            margin-bottom: 40px;
+        }
+
+        .use-case-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .use-case {
+            background: rgba(255,255,255,0.15);
+            padding: 25px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .use-case h3 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+        }
+
+        .how-it-works {
+            background: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            margin: 40px 0;
+        }
+
+        .how-it-works h2 {
+            text-align: center;
+            font-size: 2.2em;
+            margin-bottom: 50px;
+            color: #333;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .step {
+            text-align: center;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            line-height: 60px;
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .step h3 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            color: #667eea;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: white;
+            opacity: 0.9;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .tagline {
+                font-size: 1.1em;
+            }
+
+            .features, .use-cases, .how-it-works {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">🔄</div>
+            <h1>ReconcileBot</h1>
+            <p class="tagline">AI-Powered Bank & Financial Reconciliation Tool<br>Save Hours on Matching Transactions</p>
+            <a href="https://reconcilebot.io" class="cta-button">Try Demo Now →</a>
+        </header>
+
+        <section class="features">
+            <h2>Why ReconcileBot?</h2>
+            <div class="feature-grid">
+                <div class="feature">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI-Powered Matching</h3>
+                    <p>Intelligent fuzzy matching finds discrepancies across numeric, text, and date fields automatically.</p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Save Hours</h3>
+                    <p>Reconcile thousands of transactions in minutes, not days. Reduce manual data entry by 95%.</p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">🎯</div>
+                    <h3>99% Accuracy</h3>
+                    <p>Advanced algorithms detect mismatches, missing records, and anomalies with precision.</p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">📊</div>
+                    <h3>Easy Uploads</h3>
+                    <p>Drag & drop CSV files from any accounting system. No formatting required.</p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Anomaly Detection</h3>
+                    <p>Machine learning identifies outliers and suspicious transactions automatically.</p>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">📈</div>
+                    <h3>Export Results</h3>
+                    <p>Download reconciliation reports as CSV for audit trails and compliance.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="use-cases">
+            <h2>Perfect For</h2>
+            <div class="use-case-list">
+                <div class="use-case">
+                    <h3>👨‍💼 Accountants</h3>
+                    <p>Month-end close reconciliations done in minutes</p>
+                </div>
+
+                <div class="use-case">
+                    <h3>🏢 Finance Teams</h3>
+                    <p>Bank statement reconciliation for large volumes</p>
+                </div>
+
+                <div class="use-case">
+                    <h3>🏪 Small Businesses</h3>
+                    <p>Match sales data across multiple systems</p>
+                </div>
+
+                <div class="use-case">
+                    <h3>🏦 Banking</h3>
+                    <p>Intercompany transaction reconciliation</p>
+                </div>
+
+                <div class="use-case">
+                    <h3>📦 E-commerce</h3>
+                    <p>Reconcile payments from multiple platforms</p>
+                </div>
+
+                <div class="use-case">
+                    <h3>🔐 Auditors</h3>
+                    <p>Verify financial records with confidence</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-it-works">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Upload Files</h3>
+                    <p>Drag & drop your CSV files from any source</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Select Keys</h3>
+                    <p>Choose matching columns (or use auto-detection)</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Run Reconciliation</h3>
+                    <p>AI matches transactions instantly</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Review Results</h3>
+                    <p>See matches, mismatches, and anomalies</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h3>Export Report</h3>
+                    <p>Download results for your records</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="https://reconcilebot.io" class="cta-button">Start Reconciling Now →</a>
+            </div>
+        </section>
+
+        <footer>
+            <p><strong>ReconcileBot</strong> – Automate Your Financial Reconciliations</p>
+            <p style="margin-top: 15px;">
+                <a href="https://github.com/reconcile-ai-2025/reconcile-ai-pro">GitHub</a> •
+                <a href="mailto:support@reconcilebot.io">Contact</a> •
+                <a href="https://reconcilebot.io/privacy">Privacy</a>
+            </p>
+            <p style="margin-top: 15px; font-size: 0.9em;">
+                © 2026 ReconcileBot. Free for accountants & small businesses.
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
