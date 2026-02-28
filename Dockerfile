@@ -1,5 +1,5 @@
 # Dockerfile for ReconcileBot Landing Page (Static Site)
-# Uses nginx to serve static HTML files
+# Uses nginx to serve static HTML files on Railway's dynamic PORT
 
 FROM nginx:alpine
 
@@ -8,11 +8,12 @@ COPY index.html /usr/share/nginx/html/
 COPY robots.txt /usr/share/nginx/html/
 COPY sitemap.xml /usr/share/nginx/html/
 
-# Copy nginx configuration
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Copy startup script
+COPY start-nginx.sh /start-nginx.sh
+RUN chmod +x /start-nginx.sh
 
-# Expose port (Railway will set PORT env var)
-EXPOSE 80
+# Railway provides PORT environment variable
+ENV PORT=8080
 
-# Start nginx
-CMD ["nginx", "-g", "daemon off;"]
+# Start nginx with dynamic port
+CMD ["/start-nginx.sh"]
